@@ -13,13 +13,19 @@
         <Button x:Name="buttonStartStop" 
                 Content="Start Simulation" FontSize="22"
                 HorizontalAlignment="Left" Margin="3,2,0,0" VerticalAlignment="Top"
-                Height="55" Width="352"
+                Height="55" Width="252"
                 Click="buttonStartStop_Click"/>
+        <Button x:Name="buttonClean"
+                Content="Clean" FontSize="22"
+                HorizontalAlignment="Left" Margin="257,2,0,0" VerticalAlignment="Top"
+                Height="55" Width="99" 
+                Click="buttonClean_Click"/>
         <Button x:Name="buttonRandom" 
                 Content="Random" FontSize="22"
                 HorizontalAlignment="Left" Margin="358,2,0,0" VerticalAlignment="Top" 
                 Height="55" Width="245"
                 Click="buttonRandom_Click"/>
+        
 
     </Grid>
 </Window>
