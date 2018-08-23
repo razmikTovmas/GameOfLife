@@ -150,10 +150,25 @@ namespace GameOfLife
                 ((Button)sender).Content = "Stop Simulaton";
             }
         }
-        
+
         private void buttonRandom_Click(object sender, RoutedEventArgs e)
         {
+            Random r = new Random();
 
+            for (int i = 0; i < ROWS_COLS; i++)
+            {
+                for (int j = 0; j < ROWS_COLS; j++)
+                {
+                    if(r.Next(3) == 0)
+                    {
+                        fields[i, j].Fill = GetRandomColor();
+                    }
+                    else
+                    {
+                        fields[i, j].Fill = Brushes.LightGray;
+                    }
+                }
+            }
         }
 
         private void buttonClean_Click(object sender, RoutedEventArgs e)
