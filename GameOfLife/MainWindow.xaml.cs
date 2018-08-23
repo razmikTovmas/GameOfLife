@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace GameOfLife
 {
@@ -24,11 +25,22 @@ namespace GameOfLife
 
         Rectangle[,] fields = new Rectangle[ROWS_COLS, ROWS_COLS];
 
+        DispatcherTimer timer = new DispatcherTimer();
+
         public MainWindow()
         {
             InitializeComponent();
 
             InitializeDisplay();
+
+            /* Initialize timer */
+            timer.Interval = TimeSpan.FromSeconds(0.1);
+            timer.Tick += Update;
+        }
+
+        private void Update(object sender, EventArgs e)
+        {
+
         }
 
         private void InitializeDisplay()
@@ -85,7 +97,16 @@ namespace GameOfLife
 
         private void buttonStartStop_Click(object sender, RoutedEventArgs e)
         {
-
+            if(timer.IsEnabled)
+            {
+                timer.Stop();
+                ((Button)sender).Content = "Start Simulaton";
+            }
+            else
+            {
+                timer.Start();
+                ((Button)sender).Content = "Stop Simulaton";
+            }
         }
         
         private void buttonRandom_Click(object sender, RoutedEventArgs e)
