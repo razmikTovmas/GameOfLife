@@ -59,6 +59,27 @@ namespace GameOfLife
 
         private void Ractangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if(((Rectangle)sender).Fill == Brushes.LightGray)
+            {
+                ((Rectangle)sender).Fill = GetRandomColor();
+            }
+            else
+            {
+                ((Rectangle)sender).Fill = Brushes.LightGray;
+            }
+        }
+
+        private Brush GetRandomColor()
+        {
+            Random r = new Random();
+            switch(r.Next(5))
+            {
+                case 0: return Brushes.DarkRed;
+                case 1: return Brushes.DarkGreen;
+                case 2: return Brushes.DarkBlue;
+                case 3: return Brushes.DarkOrange;
+                default:return Brushes.DarkKhaki;
+            }
 
         }
 
