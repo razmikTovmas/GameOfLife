@@ -1,0 +1,7 @@
+.vs/
+GameOfLife.sln
+GameOfLife/bin/
+GameOfLife/obj/
+GameOfLife/Properties/
+GameOfLife/App.config
+GameOfLife/GameOfLife.csproj
