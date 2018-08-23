@@ -24,5 +24,15 @@ namespace GameOfLife
         {
             InitializeComponent();
         }
+
+        private void buttonStartStop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        
+        private void buttonRandom_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
