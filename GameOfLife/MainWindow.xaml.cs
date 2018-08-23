@@ -40,7 +40,49 @@ namespace GameOfLife
 
         private void Update(object sender, EventArgs e)
         {
+            int[,] temp = new int[ROWS_COLS, ROWS_COLS];
 
+            for (int i = 0; i < ROWS_COLS; i++)
+            {
+                for (int j = 0; j < ROWS_COLS; j++)
+                {
+                    int iP1 = (i + 1 == ROWS_COLS) ? 0 : i + 1;
+                    int jP1 = (j + 1 == ROWS_COLS) ? 0 : j + 1;
+                    int iM1 = (i == 0) ? ROWS_COLS - 1 : i - 1;
+                    int jM1 = (j == 0) ? ROWS_COLS - 1 : j - 1;
+
+                    temp[i, j] = Sum(fields[iM1, jM1], fields[i, jM1], fields[iP1, jM1],
+                                    fields[iM1, j],                     fields[iP1, j],
+                                    fields[iM1, jP1], fields[i, jP1], fields[iP1, jP1]);
+                }
+            }
+
+            for (int i = 0; i < ROWS_COLS; i++)
+            {
+                for (int j = 0; j < ROWS_COLS; j++)
+                {
+                    if(temp[i, j] < 2 || temp[i,j] > 3)
+                    {
+                        fields[i, j].Fill = Brushes.LightGray;
+                    }
+                    else if (temp[i, j] == 3 && fields[i,j].Fill == Brushes.LightGray)
+                    {
+                        fields[i, j].Fill = GetRandomColor();
+                    }
+                }
+            }
+        }
+
+        private int Sum(params Rectangle[] arr)
+        {
+            int res = 0;
+
+            foreach(Rectangle r in arr)
+            {
+                if(r.Fill != Brushes.LightGray) res++;
+            }
+
+            return res;
         }
 
         private void InitializeDisplay()
