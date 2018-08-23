@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameOfLife"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="720" ResizeMode="NoResize">
+        Title="MainWindow" Height="700" Width="620" ResizeMode="NoResize">
     <Grid>
         <Canvas x:Name="displayCanvas" HorizontalAlignment="Center" 
-                Margin="0,60,0,0" VerticalAlignment="Top"
-                Height="600" Width="700"/>
+                Margin="2,60,0,0" VerticalAlignment="Top"
+                Height="600" Width="600"/>
         <Button x:Name="buttonStartStop" 
                 Content="Start Simulation" FontSize="22"
                 HorizontalAlignment="Left" Margin="3,2,0,0" VerticalAlignment="Top"
-                Height="55" Width="402"
+                Height="55" Width="352"
                 Click="buttonStartStop_Click"/>
         <Button x:Name="buttonRandom" 
                 Content="Random" FontSize="22"
-                HorizontalAlignment="Left" Margin="408,2,0,0" VerticalAlignment="Top" 
-                Height="55" Width="295"
+                HorizontalAlignment="Left" Margin="358,2,0,0" VerticalAlignment="Top" 
+                Height="55" Width="245"
                 Click="buttonRandom_Click"/>
 
     </Grid>
