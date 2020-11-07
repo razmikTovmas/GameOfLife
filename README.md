@@ -1,7 +1,5 @@
 # GameOfLife
-Conway's Game of Life
-
-https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+Simulation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
 The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells,
   each of which is in one of two possible states, alive or dead, (or populated and unpopulated, respectively).
@@ -16,4 +14,4 @@ The universe of the Game of Life is an infinite, two-dimensional orthogonal grid
 The initial pattern constitutes the seed of the system. The first generation is created by applying
   the above rules simultaneously to every cell in the seed; births and deaths occur simultaneously,
   and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure
-  function of the preceding one. My game of life.
+  function of the preceding one. The rules continue to be applied repeatedly to create further generations.
