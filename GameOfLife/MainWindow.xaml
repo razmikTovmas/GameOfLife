@@ -6,26 +6,24 @@
         xmlns:local="clr-namespace:GameOfLife"
         mc:Ignorable="d"
         Title="Game of Life" Height="700" Width="620" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Canvas x:Name="displayCanvas" HorizontalAlignment="Center" 
-                Margin="2,60,0,0" VerticalAlignment="Top"
-                Height="600" Width="600"/>
-        <Button x:Name="buttonStartStop" 
-                Content="Start Simulation" FontSize="22"
-                HorizontalAlignment="Left" Margin="3,2,0,0" VerticalAlignment="Top"
-                Height="55" Width="252"
-                Click="buttonStartStop_Click"/>
-        <Button x:Name="buttonClean"
-                Content="Clean" FontSize="22"
-                HorizontalAlignment="Left" Margin="257,2,0,0" VerticalAlignment="Top"
-                Height="55" Width="99" 
-                Click="buttonClean_Click"/>
-        <Button x:Name="buttonRandom" 
-                Content="Random" FontSize="22"
-                HorizontalAlignment="Left" Margin="358,2,0,0" VerticalAlignment="Top" 
-                Height="55" Width="245"
-                Click="buttonRandom_Click"/>
-        
-
-    </Grid>
+  <Grid>
+    <Canvas x:Name="displayCanvas" HorizontalAlignment="Center" 
+            Margin="2,60,0,0" VerticalAlignment="Top"
+            Height="600" Width="600"/>
+    <Button x:Name="buttonStartStop" 
+            Content="Start Simulation" FontSize="22"
+            HorizontalAlignment="Left" Margin="3,2,0,0" VerticalAlignment="Top"
+            Height="55" Width="252"
+            Click="buttonStartStop_Click"/>
+    <Button x:Name="buttonClean"
+            Content="Clean" FontSize="22"
+            HorizontalAlignment="Left" Margin="257,2,0,0" VerticalAlignment="Top"
+            Height="55" Width="99" 
+            Click="buttonClean_Click"/>
+    <Button x:Name="buttonRandom" 
+            Content="Random" FontSize="22"
+            HorizontalAlignment="Left" Margin="358,2,0,0" VerticalAlignment="Top" 
+            Height="55" Width="245"
+            Click="buttonRandom_Click"/>
+  </Grid>
 </Window>

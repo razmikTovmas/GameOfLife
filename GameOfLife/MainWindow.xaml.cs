@@ -52,7 +52,7 @@ namespace GameOfLife
                     int jM1 = (j == 0) ? ROWS_COLS - 1 : j - 1;
 
                     temp[i, j] = Sum(fields[iM1, jM1], fields[i, jM1], fields[iP1, jM1],
-                                    fields[iM1, j],                     fields[iP1, j],
+                                    fields[iM1, j], fields[iP1, j],
                                     fields[iM1, jP1], fields[i, jP1], fields[iP1, jP1]);
                 }
             }
@@ -61,11 +61,11 @@ namespace GameOfLife
             {
                 for (int j = 0; j < ROWS_COLS; j++)
                 {
-                    if(temp[i, j] < 2 || temp[i,j] > 3)
+                    if (temp[i, j] < 2 || temp[i, j] > 3)
                     {
                         fields[i, j].Fill = Brushes.LightGray;
                     }
-                    else if (temp[i, j] == 3 && fields[i,j].Fill == Brushes.LightGray)
+                    else if (temp[i, j] == 3 && fields[i, j].Fill == Brushes.LightGray)
                     {
                         fields[i, j].Fill = GetRandomColor();
                     }
@@ -77,9 +77,9 @@ namespace GameOfLife
         {
             int res = 0;
 
-            foreach(Rectangle r in arr)
+            foreach (Rectangle r in arr)
             {
-                if(r.Fill != Brushes.LightGray) res++;
+                if (r.Fill != Brushes.LightGray) res++;
             }
 
             return res;
@@ -113,7 +113,7 @@ namespace GameOfLife
 
         private void Ractangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(((Rectangle)sender).Fill == Brushes.LightGray)
+            if (((Rectangle)sender).Fill == Brushes.LightGray)
             {
                 ((Rectangle)sender).Fill = GetRandomColor();
             }
@@ -125,21 +125,21 @@ namespace GameOfLife
 
         private Brush GetRandomColor()
         {
-            Random r = new Random();
-            switch(r.Next(5))
-            {
-                case 0: return Brushes.DarkRed;
-                case 1: return Brushes.DarkGreen;
-                case 2: return Brushes.DarkBlue;
-                case 3: return Brushes.DarkOrange;
-                default:return Brushes.DarkKhaki;
-            }
-
+            return Brushes.Black;
+            //Random r = new Random();
+            //switch (r.Next(5))
+            //{
+            //    case 0: return Brushes.DarkRed;
+            //    case 1: return Brushes.DarkGreen;
+            //    case 2: return Brushes.DarkBlue;
+            //    case 3: return Brushes.DarkOrange;
+            //    default: return Brushes.DarkKhaki;
+            //}
         }
 
         private void buttonStartStop_Click(object sender, RoutedEventArgs e)
         {
-            if(timer.IsEnabled)
+            if (timer.IsEnabled)
             {
                 timer.Stop();
                 ((Button)sender).Content = "Start Simulaton";
@@ -159,7 +159,7 @@ namespace GameOfLife
             {
                 for (int j = 0; j < ROWS_COLS; j++)
                 {
-                    if(r.Next(3) == 0)
+                    if (r.Next(3) == 0)
                     {
                         fields[i, j].Fill = GetRandomColor();
                     }
