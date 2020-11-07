@@ -19,3 +19,8 @@ The initial pattern constitutes the seed of the system. The first generation is 
 ## Demo
 
 ![](./Resources/demo.gif)
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
